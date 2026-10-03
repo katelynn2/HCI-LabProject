@@ -1,0 +1,761 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/*NAVBAR*/
+
+.navbar {
+    background: #061712;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar__logo {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    background-image: url('../assets/gem\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item {
+    height: 80px;
+}
+
+.navbar__links {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.navbar__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to left, #006c56 0%, #17e9ca 100%);
+    color: white;
+}
+
+.button:hover {
+    background: rgba(255, 255, 255, 0.418);
+    transition: all 0.3s linear;
+}
+
+.navbar__links:hover {
+    text-decoration: underline;
+    transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 768px;
+        padding: 0;
+    }
+
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        background: #13131b;
+    }
+
+    .navbar__menu.active {
+        background: #022c24;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 70vh;
+        font-size: 1.6rem;
+    }
+
+    #navbar__logo {
+        padding-left: 25px;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: white
+    }
+
+    .navbar__item {
+        width: 100%;
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar__btn {
+        padding-bottom: 2rem;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 70px;
+        margin: 0;
+    }
+
+    .navbar__toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+
+/*LANDING SECTION CSS*/
+.main {
+    background-color: #061712;
+    position: relative;
+    margin: 0;
+    margin-bottom: 0;
+    padding: 0;
+    border-bottom: none;
+}
+
+.main__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #061712;
+    width: 100%;
+    max-width: 1300px;
+    padding: 2rem 50px;
+}
+
+.main__content h1 {
+    position:relative;
+    margin-top: 0.5rem;
+    font-size: 6rem;
+    background-image: linear-gradient(to top, white 0%, #17e9ca 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.main__content h2 {
+    position: relative;
+    font-size: 4rem;
+    color: white;
+}
+
+.main__content p {
+    position: relative;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 500;
+}
+
+.main__btn {
+    position: relative;
+    font-size: 1rem;
+    background-image: linear-gradient(to left, #006c56 0%, #17e9ca 100%);
+    padding: 15px 35px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+}
+
+.main__btn a {
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-decoration: none;
+}
+
+.main__btn:hover {
+    background: rgba(255, 255, 255, 0.418);
+    transition: all 0.3s linear;
+}
+
+.main__img--container {
+    text-align: center;
+}
+
+#main__img {
+    position: relative;
+    height: 75%;
+    width: 75%;
+}
+
+.blur__circle1 {
+    position:absolute;
+    width: 300px;
+    height: 300px;
+    left: 300px;
+    top: 50px;
+    background: #07cab7;
+    border-radius: 50%;
+    filter: blur(250px);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.blur__circle2 {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    bottom: 200px;
+    right: 50px;
+    background: #3fa5d4;
+    border-radius: 50%;
+    filter: blur(250px);
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+    .main__container {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 0;
+        height: 120vh;
+    }
+
+    .main__content {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .main__content h1 {
+        font-size: 6rem;
+        margin-top: 1rem;
+    }
+
+    .main__content h2 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .main__content p {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .blur__circle1 {
+        display: none;
+    }
+
+    .blur__circle2 {
+        display: flex;
+        justify-content: left;
+        align-items:center;
+        width: 100%;
+        max-width: 300px;
+        left: 20px;
+
+    }
+}
+
+/*TOP COINS CSS*/
+.tc {
+    background: #061712;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0 0 0;
+    margin: -1px;
+}
+
+.tc h1 {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 0 -5px 10px rgb(92, 165, 133);
+}
+
+.tc__list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    margin: 10px auto;
+    max-width: 1300px;
+    padding: 10px;
+}
+
+.coin {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    text-align: center;
+    line-height: 1.3;
+    margin: 40px auto;
+    color: white;
+    border: 3px solid white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    width: 400px;
+    height: 180px;
+    cursor: pointer;
+}
+
+.coin:hover {
+    transform: translateY(-8px);
+    border-color: rgb(0, 255, 217);
+    box-shadow: 0 20px 40px rgba(2, 255, 204, 0.701);
+}
+
+.coin img {
+    width: 120px;
+    margin-right:50px;
+}
+
+.tc__btn {
+    position: relative;
+    font-size: 3rem;
+    background-image: linear-gradient(to left, #006c56 0%, #17e9ca 100%);
+    padding: 15px 30px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -1px auto;
+    max-width: 1300px;
+    cursor: pointer;
+    transition: all 0.35s;
+}
+
+.tc__btn a {
+    font-size: 3rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-decoration: none;
+}
+
+.tc__btn:hover {
+    background: rgba(255, 255, 255, 0.418);
+    transition: all 0.3s linear;
+}
+
+.blur__circle3 {
+    position: absolute;
+    max-width: 1300px;
+    margin: auto;
+    width: 1000px;
+    height: 400px;
+    top: 1200px;
+    left: 100px;
+    background: #6fe2f4;
+    border-radius: 50%;
+    filter: blur(200px);
+    opacity: 0.4;
+}
+
+@media screen and (max-width: 768px) {
+    .tc {
+        margin: -1px auto;
+    }
+
+    .tc h1 {
+        font-size: 3rem;
+        margin-top: 7rem;
+        text-align: center;
+    }
+    
+    .tc__list {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .coin {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .coin img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 30px;
+        margin-left: 40px;
+    }
+
+    .tc__btn {
+        font-size: 2rem;
+        padding: 10px 20px;
+    }
+
+    .tc__btn a {
+        font-size: 2rem;
+    }
+
+    .blur__circle3 {
+        width: 100px;
+        height: 2000px;
+        top: 1000px;
+        left: 150px;
+    }
+}
+
+/*NEW TO CRYPTO SECTION*/
+.intro {
+    background: #061712;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8rem;
+    margin: auto;
+    min-height: 60vh;
+}
+
+.intro h1 {
+    margin-top: 9rem;
+    margin-right: 3rem;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 5px 10px rgb(159, 245, 208);
+}
+
+.intro__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: -1px;
+}
+
+.intro__card {
+    width: 100%;
+    height: 70vh;
+    max-width: 1300px;
+    border-radius: 8px;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 22, 19, 0.6) 0%), 
+        url(/assets/beautiful-cryptocurrency-hologram-design\ \(1\).jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    text-align: right;
+}
+
+.intro__card p {
+    font-size: 23px;
+    line-height: 1.6;
+    width: 95%;
+    color: white;
+    margin: 1rem 3.5rem 2rem auto;
+    max-width: 700px;
+    text-align: right;
+}
+
+.intro__btn {
+    position: relative;
+    margin-right: 3rem;
+    font-size: 1rem;
+    background-image: linear-gradient(to left, #006c56 0%, #17e9ca 100%);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+}
+
+.intro__btn a {
+    font-size: 1.5rem;
+    position: relative;
+    color: white;
+    text-decoration: none;
+}
+
+.intro__btn:hover {
+    background: rgba(255, 255, 255, 0.418);
+    transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 768px) {
+    .intro {
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .intro h1 {
+        font-size: 4rem;
+        margin: 5rem auto;
+        text-align: center;
+    }
+
+    .intro__card {
+        width: 100%;
+        height: 90vh;
+        margin: 0 0;
+        background-position: center;
+        text-align: center;
+    }
+
+    .intro__card p {
+        font-size: 2rem;
+        font-weight: 300;
+        margin: 5rem auto;
+        max-width: 90%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .intro__btn {
+        display: block;
+        margin: 5rem auto;
+        padding: 1rem 3rem;
+    }
+
+    .intro__btn a {
+        font-size: 2rem;
+        text-decoration: none;
+        color: white;
+    }
+}
+
+/*FOOTER*/
+.footer {
+    background-color: #061712;
+    color: white;
+    padding: 3rem 0 1rem 0;
+    margin: 0;
+    border: none;
+}
+
+.footercontainer {
+    max-width: 1300px;
+    margin: auto;
+    padding-top: 2rem;
+    padding-left: 10px;
+}
+
+.row {
+    display: flex;
+    gap: 180px;
+    flex-wrap: wrap;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10px;
+}
+
+.column h2 {
+    text-align: center;
+    font-size: 2rem;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.column p {
+    font-size: 1rem;
+    margin: 3px 0;
+    font-weight: 50;
+}
+
+.logocontainer {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    padding: 30px 10px;
+}
+
+.logo {
+    display: flex;
+    gap: 20px;
+}
+
+.logo img {
+    width: 30px;
+}
+
+.rights p {
+    display: flex;
+    font-size: 1rem;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    font-weight: 30;
+}
+
+@media screen and (max-width: 768px) {
+    .footercontainer {
+        height: 40vh;
+    }
+
+    .row {
+        display: flex;
+        justify-content: flex-start;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 10px;
+    }
+
+    .column h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        text-decoration: underline;
+        margin-bottom: 10px;
+    }
+
+    .column p {
+        font-size: 1rem;
+        margin: 3px 0;
+        font-weight: 50;
+    }
+
+    .logocontainer {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: flex-start;
+        padding: 90px 10px 20px 0;
+    }
+
+    .logo {
+        display: flex;
+        margin-left: 10px;
+        gap: 20px;
+    }
+
+    .logo img {
+        width: 30px;
+    }
+
+    .rights p {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 10px;
+        font-weight: 30;
+    }
+}
+
+.main, .tc, .intro, .footer {
+    display: block;
+    margin: 0;
+    border: 0;
+    vertical-align: top;
+}
